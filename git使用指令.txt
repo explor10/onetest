@@ -1,3 +1,6 @@
+git init 初始化仓库
+git branch 查看现在的分支
+git status 查看文件状态
 **上传文件**
 git add+文件名（你要上传的文件）(全部文件用·)
 git commit -m "[新增]给文件加一个注释"
