@@ -1,14 +1,20 @@
+import sklearn.linear_model
 import xgboost
+import sklearn
 import shap
+from matplotlib import pyplot as plt
 
-# train an XGBoost model
-X, y = shap.datasets.california()
-model = xgboost.XGBRegressor().fit(X, y)
+# train an linear regression model
 
-# explain the model's predictions using SHAP
-# (same syntax works for LightGBM, CatBoost, scikit-learn, transformers, Spark, etc.)
+import transformers
+
+# load a transformers pipeline model
+model = transformers.pipeline('sentiment-analysis', return_all_scores=True)
+
+# explain the model on two sample inputs
 explainer = shap.Explainer(model)
-shap_values = explainer(X)
+shap_values = explainer(["What a great movie! ...if you have no taste."])
 
-# visualize the first prediction's explanation
-shap.plots.waterfall(shap_values[0])
+# visualize the first prediction's explanation for the POSITIVE output class
+shap.plots.text(shap_values[0, :, "POSITIVE"])
+plt.show()
