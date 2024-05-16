@@ -17,6 +17,7 @@ inputs_test=torch.tensor(inputs_test,dtype=torch.long)
 labels_test=torch.tensor(newsgroups_test.target,dtype=torch.long)
 print(inputs_train,inputs_test)
 print(newsgroups_train,newsgroups_test)
+
 class net(nn.Module):
     def __init__(self):
         super(net.self).__init__()
