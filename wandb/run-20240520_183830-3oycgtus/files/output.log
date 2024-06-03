@@ -1,0 +1,58 @@
+
+
+  0%|      | 2/5631 [00:06<4:34:01,  2.92s/it]Traceback (most recent call last):
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/downsnow/.vscode/extensions/ms-python.debugpy-2024.6.0-darwin-arm64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/Users/downsnow/onetest/onetest/gpt2.py", line 12, in <module>
+    trainer=SFTTrainer("gpt2",train_dataset=data,dataset_text_field="context").train()
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/trl/trainer/sft_trainer.py", line 361, in train
+    output = super().train(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/trainer.py", line 2203, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/trainer.py", line 3138, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/trainer.py", line 3161, in compute_loss
+    outputs = model(**inputs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1305, in forward
+    transformer_outputs = self.transformer(
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 1119, in forward
+    outputs = block(
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 617, in forward
+    attn_outputs = self.attn(
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 347, in forward
+    attn_output, attn_weights = self._attn(query, key, value, attention_mask, head_mask)
+  File "/opt/miniconda3/envs/transformer/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 199, in _attn
+    attn_weights = torch.matmul(query, key.transpose(-1, -2))
+RuntimeError: MPS backend out of memory (MPS allocated: 19.51 GB, other allocations: 714.73 MB, max allowed: 20.40 GB). Tried to allocate 384.00 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
